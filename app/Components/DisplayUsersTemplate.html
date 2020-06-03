@@ -1,0 +1,11 @@
+<div>how are you {{$ctrl.name}}</div>
+<div style="list-style-type: none; margin-right: 15px;">
+    <a button="#" ng-click="$ctrl.createChat(user.id)" style="background-color: rgb(34, 31, 77); color: #fff; margin: 5px;
+              padding: 10px; border: 1px solid #fff; cursor: pointer; display: block; border-radius: 5px;
+              text-align: center; text-decoration: none;"
+              ng-repeat="user in $ctrl.users">
+
+        {{ user.userName }}
+        
+</button>
+</div>

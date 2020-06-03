@@ -7,6 +7,22 @@ angular.module('chatApp.Register', ['ngRoute'])
     })
 }])
 
-.controller('RegisterController', [function(){
+.controller('RegisterController', ['$scope','$window', '$http', function($scope, $window, $http){
 
+      $scope.register = function(user){
+        
+        $http.post('https://localhost:5001/api/auth/register', user)
+            .then((res) => {
+                console.log(res)
+              
+                $window.localStorage.setItem("UserId", res.data.userId)
+                $window.localStorage.setItem("token", res.data.token)
+                $window.location.href = '#!/home'
+            }, (err) => console.log(err))
+            
+      }
+
+     
+
+    
 }])
