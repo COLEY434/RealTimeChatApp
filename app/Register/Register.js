@@ -17,7 +17,7 @@ angular.module('chatApp.Register', ['ngRoute'])
               
                 $window.localStorage.setItem("UserId", res.data.userId)
                 $window.localStorage.setItem("token", res.data.token)
-                $window.location.href = '#!/home'
+                $window.location.href = '#!/'
             }, (err) => console.log(err))
             
       }

@@ -3,7 +3,6 @@ angular.module('chatApp')
     templateUrl: "Components/DisplayUsersTemplate.html",
     controller: function displayUsersComponent($http, $window){      
         var vm = this
-        vm.name = "Collins"
         vm.users = []
         vm.token = $window.localStorage.getItem("token")
         
@@ -23,13 +22,13 @@ angular.module('chatApp')
 
         vm.createChat = function(userId){
             $http.defaults.headers.common.Authorization = 'Bearer ' + vm.token;
-            $http.post('https://localhost:5001/api/Home/' + userId + '/create-chat')
+            $http.post('https://localhost:5001/api/' + userId + '/create-chat')
                 .then(function(res){
                     if(res.data.success){
                         $window.location.href = "#!/chat/" + res.data.id
                         
                     }
-                    alert("Something went wrong creating your chat")
+                    
                     
                 }, (err) => console.log(err))
         

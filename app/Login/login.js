@@ -16,7 +16,7 @@ angular.module('chatApp.Login', ['ngRoute', 'tokenService'])
                     
                     $window.localStorage.setItem("UserId", res.data.userId)
                     $window.localStorage.setItem("token", res.data.token)
-                    $window.location.href = '#!/home'
+                    $window.location.href = '#!/'
                     
                 }, () => console.log())
                 

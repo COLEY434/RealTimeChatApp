@@ -3,10 +3,20 @@
         
         <div style="background-color: green; width: 100%;; height: 500px;">
             
+            
+    
+            <div id="#chat-body" ng-repeat="message in messages">
+                <header>{{message.Name}}:</header>
+                <p>{{message.Text}}</p>
+                <footer>{{message.TimeStamp}}</footer>
+                {{id}}
+            </div>
+    
         </div>
         <form action="" style="display: flex; flex-direction: row; margin-bottom: 3px;">
-            <input type="text" class="form-control">
-            <button class="btn btn-success">Send</button>
+            <input type="hidden" ng-model="message.chatId" value="{{chat.id}}" />
+            <input type="text" ng-model="message.text" class="form-control">
+            <button class="btn btn-success" type="submit" ng-click="sendMessage(message)">Send</button>
         </form>
       
     </div>
